@@ -38,10 +38,101 @@
 
     </div>
 
+   <br><br><br>
+   
+    <form id="forma">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+
+                <select id="tipo" class="agregar_tipo">
+                    <option value="ingreso" selected>+</option>
+                    <option value="egreso">-</option>
+                </select>
+                <input type="text" class="agregar_descripcion" id="descripcion" placeholder="Agregar Descripción">
+                <input type="text" class="agregar_valor" step="any">
+                <button class="agregar_btn"> <ion-icon name="checkmark-circle-outline"></ion-icon></button>
+            </div>
+
+        </div>
+    </form>
+
+
+    <div class="contenedor limpiarEstilos">
+
+        <div class="ingreso">
+            <h2 class="ingreso_titulo">Ingresos</h2>
+            <div class="lista-ingresos">
+                <div class="elemento limpiarEstilos"></div>
+                <div class="elemento_descripcion">salario</div>
+
+                <div class="derecha limpiarEstilos">
+                    <div class="elemento_valor">+2200,00 MXN</div>
+                    <div class="elemento_eliminar">
+                        <button class="elemento_eliminar--btn">
+                            <!-- nombre incorrecto en la sintaxis del PDF, nombre correcto en el CSS-->
+                            <ion-icon name="close-circle-outline"></ion-icon>
 
 
 
-    
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">Venta Coche</div>
+                    <div class="derecha limpiarEstilos">
+
+                        <div class="elemento_valor">+1500,00 MXN</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="egreso">
+
+            <h2 class="egreso_titulo">Egresos</h2>
+            <div class="lista-egresos">
+                <div class="elemento limpiarEstilos"></div>
+                <div class="elemento_descripcion">Renta departamento</div>
+                <div class="derecha limpiarEstilos">
+
+                    <div class="elemento_valor">-900,00 MXN</div>
+                    <div class="elemento_porcentaje">21%</div>
+                    <div class="elemento_eliminar">
+                        <button class="elemento_eliminar--btn">
+                            <ion-icon name="close-circle-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="elemento limpiarEstilos">
+                <div class="elemento_descripcion">Ropa</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="elemento_valor">-400,00 MXN</div>
+                    <div class="elemento_porcentaje">9%</div>
+                    <div class="elemento_eliminar">
+                        <button class="elemento_eliminar--btn">
+                            <ion-icon name="close-circle-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <!--PDF incorrecto, hay un punto de "más" (el último punto) en el link de la página 4-->
 
 
 
