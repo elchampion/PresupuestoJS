@@ -13,33 +13,37 @@
 
 
     <div class="cabecero">
-        <div class="presupuesto"></div> <!-- escribir div.presupuesto-->
-        <div class="presupuesto_titulo">Presupuesto disponible</div>
-        <div class="presupuesto_valor">+2,000</div>
 
-        <div class="presupuesto_ingreso limpiarEstilos">
+        <div class="presupuesto">
 
-            <div class="presupuesto_ingreso--texto">Ingresos</div>
-            <div class="derecha">
-                <div class="presupuesto_ingreso--valor">+4,000</div>
-                <div class="presupuesto_ingreso--porcentaje"><br></div>
-            </div>
+            <div class="presupuesto_titulo">Presupuesto disponible</div>
+            <div class="presupuesto_valor">+2,000</div>
 
-        </div>
+            <div class="presupuesto_ingreso limpiarEstilos">
 
-        <div class="presupuesto_egreso limpiarEstilos">
-            <div class="presupuesto_egreso--texto">Egresos</div>
-            <div class="derecha limpiarEstilos">
-                <div class="presupuesto_egreso--valor">-1,900</div>
-                <div class="presupuesto_egreso--porcentaje">45%</div>
+                <div class="presupuesto_ingreso--texto">Ingresos</div>
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor">+4,000</div>
+                    <div class="presupuesto_ingreso--porcentaje"><br></div>
+                </div>
 
             </div>
-        </div>
+
+            <div class="presupuesto_egreso limpiarEstilos">
+                <div class="presupuesto_egreso--texto">Egresos</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="presupuesto_egreso--valor">-1,900</div>
+                    <div class="presupuesto_egreso--porcentaje">45%</div>
+
+                </div>
+            </div>
+
+        </div> <!-- escribir div.presupuesto-->
+
 
     </div>
 
-   <br><br><br>
-   
+
     <form id="forma">
         <div class="agregar">
             <div class="agregar_contenedor">
@@ -60,24 +64,31 @@
     <div class="contenedor limpiarEstilos">
 
         <div class="ingreso">
+
             <h2 class="ingreso_titulo">Ingresos</h2>
+
             <div class="lista-ingresos">
-                <div class="elemento limpiarEstilos"></div>
-                <div class="elemento_descripcion">salario</div>
 
-                <div class="derecha limpiarEstilos">
-                    <div class="elemento_valor">+2200,00 MXN</div>
-                    <div class="elemento_eliminar">
-                        <button class="elemento_eliminar--btn">
-                            <!-- nombre incorrecto en la sintaxis del PDF, nombre correcto en el CSS-->
-                            <ion-icon name="close-circle-outline"></ion-icon>
+                <div class="elemento limpiarEstilos">
 
+                    <div class="elemento_descripcion">salario</div>
 
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">+2200,00 MXN</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <!-- nombre incorrecto en la sintaxis del PDF, nombre correcto en el CSS-->
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
 
-                        </button>
                     </div>
 
+
+
+
                 </div>
+
 
                 <div class="elemento limpiarEstilos">
                     <div class="elemento_descripcion">Venta Coche</div>
@@ -99,17 +110,21 @@
         <div class="egreso">
 
             <h2 class="egreso_titulo">Egresos</h2>
-            <div class="lista-egresos">
-                <div class="elemento limpiarEstilos"></div>
-                <div class="elemento_descripcion">Renta departamento</div>
-                <div class="derecha limpiarEstilos">
 
-                    <div class="elemento_valor">-900,00 MXN</div>
-                    <div class="elemento_porcentaje">21%</div>
-                    <div class="elemento_eliminar">
-                        <button class="elemento_eliminar--btn">
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </button>
+            <div class="lista-egresos">
+
+                <div class="elemento limpiarEstilos">
+
+                    <div class="elemento_descripcion">Renta departamento</div>
+                    <div class="derecha limpiarEstilos">
+
+                        <div class="elemento_valor">-900,00 MXN</div>
+                        <div class="elemento_porcentaje">21%</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,6 +141,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
