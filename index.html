@@ -12,6 +12,58 @@
 <body>
 
 
+    <script>
+
+
+        let egresos = { Renta: 900, Ropa: 400 }; //objeto
+        let ingresos = { Quincena: 9000, Venta: 400 }; //objeto
+
+
+        const totalIngresos = () => {
+            let totalIngresos = 0;
+            //Itera el objeto ingresos en un ciclo for of. Recuerda que es necesario declarar la variable ingreso para poder iterar
+            for (let ingreso in ingresos) {
+                totalIngresos += ingresos[ingreso];
+                //console.log("la propiedad " + ingreso + " contiene " + ingresos[ingreso]);
+            }
+            return totalIngresos;
+        }
+
+
+        const totalEgresos = () => {
+            let totalEgresos = 0;
+            for (let egreso in egresos) {
+                totalEgresos += egresos[egreso];
+            }
+            return totalEgresos;
+        }
+
+        //var presupuesto = totalIngresos() - totalEgresos(); // poner los paréntesis es ejecutar la función, si no, es como poner una declaración de la fn
+        //var porcentajeEgreso = totalEgresos() / totalIngresos();
+
+
+        const cargarCabecero = () => {
+            var presupuesto = totalIngresos() - totalEgresos(); // poner los paréntesis es ejecutar la función, si no, es como poner una declaración de la fn
+            var porcentajeEgreso = totalEgresos() / totalIngresos();
+            console.log(totalIngresos());
+            console.log(totalEgresos());
+            console.log("el presupuesto es disponible es " + presupuesto);
+            console.log("el porcentaje del egreso es " + porcentajeEgreso);
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
     <div class="cabecero">
 
         <div class="presupuesto">
