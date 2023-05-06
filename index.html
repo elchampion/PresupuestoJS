@@ -45,24 +45,32 @@
         const cargarCabecero = () => {
             var presupuesto = totalIngresos() - totalEgresos(); // poner los paréntesis es ejecutar la función, si no, es como poner una declaración de la fn
             var porcentajeEgreso = totalEgresos() / totalIngresos();
-            console.log(totalIngresos());
-            console.log(totalEgresos());
-            console.log("el presupuesto es disponible es " + presupuesto);
-            console.log("el porcentaje del egreso es " + porcentajeEgreso);
+            console.log(formatoMoneda(totalIngresos()) );
+            console.log(formatoMoneda(totalEgresos()) );
+            console.log("el presupuesto es disponible es " + formatoMoneda(presupuesto) );
+            console.log("el porcentaje del egreso es " + formatoPorcentaje(porcentajeEgreso) );
+            //
+            //
         }
 
+        // una función que recibe "un número" / "numeros" , les aplica un formato de Moneda y los regresa
 
+        const formatoMoneda = (numero) => {
+            //validaciones 
+            return numero.toLocaleString('en-US', {style: "currency", currency: "MXN", minimumIntegerDigits: 2 });  //toLocal es un metodo
+        }
 
+      
+        const formatoPorcentaje = (numero) => {
+            //validaciones
+        return numero.toLocaleString('en-US', { style: "percent" , minimumFractionDigits: 2 } ); //método o función de un objeto
 
+        }
 
-
-
-
-
+// una función como propiedad de un objeto, es un método o función de un objeto
+//una función por si sola, es solo una función
 
     </script>
-
-
 
     <div class="cabecero">
 
@@ -92,7 +100,6 @@
 
         </div> <!-- escribir div.presupuesto-->
 
-
     </div>
 
 
@@ -111,6 +118,8 @@
 
         </div>
     </form>
+
+    
 
 
     <div class="contenedor limpiarEstilos">
