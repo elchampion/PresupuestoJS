@@ -17,7 +17,7 @@
 
         let egresos = { Renta: 900, Ropa: 400 }; //objeto
         let ingresos = { Quincena: 9000, Venta: 400 }; //objeto
-
+        
 
         const totalIngresos = () => {
             let totalIngresos = 0;
@@ -45,10 +45,10 @@
         const cargarCabecero = () => {
             var presupuesto = totalIngresos() - totalEgresos(); // poner los paréntesis es ejecutar la función, si no, es como poner una declaración de la fn
             var porcentajeEgreso = totalEgresos() / totalIngresos();
-            console.log(formatoMoneda(totalIngresos()) );
-            console.log(formatoMoneda(totalEgresos()) );
-            console.log("el presupuesto es disponible es " + formatoMoneda(presupuesto) );
-            console.log("el porcentaje del egreso es " + formatoPorcentaje(porcentajeEgreso) );
+            console.log(formatoMoneda(totalIngresos()));
+            console.log(formatoMoneda(totalEgresos()));
+            console.log("el presupuesto es disponible es " + formatoMoneda(presupuesto));
+            console.log("el porcentaje del egreso es " + formatoPorcentaje(porcentajeEgreso));
             //
             //
         }
@@ -57,13 +57,14 @@
 
         const formatoMoneda = (numero) => {
             //validaciones 
-            return numero.toLocaleString('en-US', {style: "currency", currency: "MXN", minimumIntegerDigits: 2 });  //toLocal es un metodo
+            return numero.toLocaleString('en-US', { style: "currency", currency: "MXN", minimumIntegerDigits: 2 });  //toLocal es un metodo
         }
 
-      
+//https://www.techonthenet.com/js/number_tolocalestring.php#:~:text=In%20JavaScript%2C%20toLocaleString()%20is,its%20value%20as%20a%20string.
+
         const formatoPorcentaje = (numero) => {
             //validaciones
-        return numero.toLocaleString('en-US', { style: "percent" , minimumFractionDigits: 2 } ); //método o función de un objeto
+            return numero.toLocaleString('en-US', { style: "percent", minimumFractionDigits: 2 }); //método o función de un objeto
 
         }
 
@@ -119,8 +120,6 @@
         </div>
     </form>
 
-    
-
 
     <div class="contenedor limpiarEstilos">
 
@@ -144,10 +143,6 @@
                         </div>
 
                     </div>
-
-
-
-
                 </div>
 
 
