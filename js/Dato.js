@@ -1,9 +1,11 @@
 
 // Clase Padre "Dato" para el manejo de datos 
 
+
+
 class Dato {
     constructor(descripción, valor) {
-        this._descripcion = descripción;
+        this._descripcion = descripción; //los atributos con _ son privados y la forma de acceder es con Get
         this._valor = valor;
     }
     get getDescripción() {

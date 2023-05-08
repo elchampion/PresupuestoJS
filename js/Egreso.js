@@ -1,5 +1,4 @@
 
-
 /*
 
 class Dato {
@@ -23,16 +22,16 @@ class Dato {
 
 */
 
-
 class Egreso extends Dato {
     // Define una vairable estática contarEgresos inicializada en 0.
-    static contarEgresos=0;
+    contarEgresos = 0;
     constructor(descripción, valor) {
         super(descripción, valor);
-        contarEgresos++;
-        this._id=contarEgresos; // this.id=contarEgresos++; ¿funcionaria?
+        Egreso.contarEgresos = Egreso.contarEgresos + 1;
+        this._id = Egreso.contarEgresos; // this.id=contarEgresos++; ¿funcionaria?
+
     }
-    get getId (){
+    get getId() {
         return this._id;
     }
 
