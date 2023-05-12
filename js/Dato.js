@@ -4,16 +4,16 @@
 
 
 class Dato {
-    constructor(descripción, valor) {
-        this._descripcion = descripción; //los atributos con _ son privados y la forma de acceder es con Get
+    constructor(descripcion, valor) {
+        this._descripcion = descripcion; //los atributos con _ son privados y la forma de acceder es con Get
         this._valor = valor;
     }
-    get getDescripción() {
-        return this._descripción;
+    get getDescripcion() {
+        return this._descripcion;
     }
 
-    set setDescripción(descripción) {
-        this._descripción = descripción;
+    set setDescripcion(descripcion) {
+        this._descripcion = descripcion;
     }
 
     get getValor() {
@@ -25,4 +25,5 @@ class Dato {
     }
 
 }
+
 

@@ -14,7 +14,7 @@ let egresos = { Renta: 900, Ropa: 400 }; //objeto
 // arrelo= [ (Salario,2000) , (Venta aurto,404040) ]
 
 const ingreso1 = new Ingreso("Salario", 20000);
-const ingreso2 = new Ingreso("Venta auto", 50000);
+const ingreso2 = new Ingreso("Venta auto", 70000);
 const egreso1 = new Egreso("Renta", 4000);
 const egreso2 = new Egreso("Ropa", 800);
 
@@ -60,14 +60,24 @@ const totalEgresos = () => {
 
 
 const cargarCabecero = () => {
-    var presupuesto = totalIngresos() - totalEgresos(); // poner los paréntesis es ejecutar la función, si no, es como poner una declaración de la fn
-    var porcentajeEgreso = totalEgresos() / totalIngresos();
+    let presupuesto = totalIngresos() - totalEgresos(); // poner los paréntesis es ejecutar la función, si no, es como poner una declaración de la fn
+    let porcentajeEgreso = totalEgresos() / totalIngresos();
     console.log(formatoMoneda(totalIngresos()));
     console.log(formatoMoneda(totalEgresos()));
     console.log("el presupuesto es disponible es " + formatoMoneda(presupuesto));
     console.log("el porcentaje del egreso es " + formatoPorcentaje(porcentajeEgreso));
-    //
-    //
+
+    let elementoPresupuesto = document.getElementById("presupuesto");
+    let elementoPorcentaje = document.getElementById("porcentaje");
+    let elementoIngresos = document.getElementById("ingresos");
+    let elementoEgresos = document.getElementById("egresos");
+
+
+    elementoPresupuesto.innerHTML = formatoMoneda(presupuesto);
+    elementoPorcentaje.innerHTML = formatoPorcentaje(porcentajeEgreso);
+    elementoIngresos.innerHTML = formatoMoneda(totalIngresos());
+    elementoEgresos.innerHTML = formatoMoneda(totalEgresos());
+
 }
 
 // una función que recibe "un número" / "numeros" , les aplica un formato de Moneda y los regresa
@@ -87,3 +97,54 @@ const formatoPorcentaje = (numero) => {
 
 // una función como propiedad de un objeto, es un método o función de un objeto
 //una función por si sola, es solo una función
+
+
+
+function cargarApp() {
+    cargarCabecero();
+    cargarIngresos();
+}
+
+
+const cargarIngresos = () => {
+    let ingresosHTML="";//declaración de variable vacia 
+    for (let ingreso of ingresos) {
+        //ingresosHTML.push(crearIngresoHTML(ingreso));
+        ingresosHTML= ingresosHTML + crearIngresoHTML(ingreso);
+    }
+//console.log(ingresosHTML);
+//enviar ingresos HTML a la lista igresos
+let listaIngresos= document.getElementsByClassName("lista-ingresos"); //encuentralo y traemelo aqui por que le quiero setear su contenido
+listaIngresos[0].innerHTML = ingresosHTML;
+//console.log(listaIngresos);
+}
+
+
+
+
+const crearIngresoHTML = (ingreso) => {
+    let ingresoHTML = `
+<div class="elemento limpiarEstilos">
+
+<div class="elemento_descripcion">${ingreso.getDescripcion}</div>
+
+<div class="derecha limpiarEstilos">
+    <div class="elemento_valor">${formatoMoneda(ingreso.getValor)}</div>
+    <div class="elemento_eliminar">
+        <button class="elemento_eliminar--btn">
+            <!-- nombre incorrecto en la sintaxis del PDF, nombre correcto en el CSS-->
+            <ion-icon name="close-circle-outline" onclick=eliminarIngreso(${ingreso.getId});></ion-icon>
+        </button>
+    </div>
+</div>
+</div>
+`;
+
+return ingresoHTML;
+}
+
+function eliminarIngreso(id){
+    console.log("HOLA CARAMBOLA")
+}
+
+
