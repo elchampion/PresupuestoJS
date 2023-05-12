@@ -14,7 +14,7 @@ let egresos = { Renta: 900, Ropa: 400 }; //objeto
 // arrelo= [ (Salario,2000) , (Venta aurto,404040) ]
 
 const ingreso1 = new Ingreso("Salario", 20000);
-const ingreso2 = new Ingreso("Venta auto", 70000);
+const ingreso2 = new Ingreso("Venta auto", 60000);
 const egreso1 = new Egreso("Renta", 4000);
 const egreso2 = new Egreso("Ropa", 800);
 
@@ -103,6 +103,7 @@ const formatoPorcentaje = (numero) => {
 function cargarApp() {
     cargarCabecero();
     cargarIngresos();
+    cargarEgresos();
 }
 
 
@@ -147,4 +148,41 @@ function eliminarIngreso(id){
     console.log("HOLA CARAMBOLA")
 }
 
+
+const cargarEgresos = () =>{
+    let egresosHTML=""; //declaración de la variable vacia
+    for(let egreso of egresos){
+        egresosHTML = egresosHTML + crearEgresoHTML(egreso);
+    }
+
+    let listaEgresos= document.getElementsByClassName("lista-egresos"); //encuentralo y traemelo aqui por que le quiero setear su contenido
+    listaEgresos[0].innerHTML = egresosHTML;
+}
+
+
+const crearEgresoHTML = (egreso) =>{
+    let egresoHTML=`
+    <div class="elemento limpiarEstilos">
+
+    <div class="elemento_descripcion">${egreso.getDescripcion}</div>
+
+    <div class="derecha limpiarEstilos">
+        <div class="elemento_valor">${formatoMoneda(egreso.getValor)}</div>
+        <div class="elemento_eliminar">
+            <button class="elemento_eliminar--btn">
+                <!-- nombre incorrecto en la sintaxis del PDF, nombre correcto en el CSS-->
+                <ion-icon name="close-circle-outline" onclick=eliminarEgreso(${egreso.getId});></ion-icon>
+            </button>
+        </div>
+
+    </div>
+</div>
+    `;
+
+    return egresoHTML;
+}
+
+function eliminarEgreso(id){
+    console.log("ELIMINAR EGRESO")
+}
 
