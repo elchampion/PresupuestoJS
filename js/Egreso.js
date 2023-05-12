@@ -24,7 +24,7 @@ class Dato {
 
 class Egreso extends Dato {
     // Define una vairable estática contarEgresos inicializada en 0.
-    contarEgresos = 0;
+    static contarEgresos = 0;
     constructor(descripción, valor) {
         super(descripción, valor);
         Egreso.contarEgresos = Egreso.contarEgresos + 1;

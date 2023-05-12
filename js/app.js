@@ -108,16 +108,16 @@ function cargarApp() {
 
 
 const cargarIngresos = () => {
-    let ingresosHTML="";//declaración de variable vacia 
+    let ingresosHTML = "";//declaración de variable vacia 
     for (let ingreso of ingresos) {
         //ingresosHTML.push(crearIngresoHTML(ingreso));
-        ingresosHTML= ingresosHTML + crearIngresoHTML(ingreso);
+        ingresosHTML = ingresosHTML + crearIngresoHTML(ingreso);
     }
-//console.log(ingresosHTML);
-//enviar ingresos HTML a la lista igresos
-let listaIngresos= document.getElementsByClassName("lista-ingresos"); //encuentralo y traemelo aqui por que le quiero setear su contenido
-listaIngresos[0].innerHTML = ingresosHTML;
-//console.log(listaIngresos);
+    //console.log(ingresosHTML);
+    //enviar ingresos HTML a la lista igresos
+    let listaIngresos = document.getElementsByClassName("lista-ingresos"); //encuentralo y traemelo aqui por que le quiero setear su contenido
+    listaIngresos[0].innerHTML = ingresosHTML;
+    //console.log(listaIngresos);
 }
 
 
@@ -141,27 +141,27 @@ const crearIngresoHTML = (ingreso) => {
 </div>
 `;
 
-return ingresoHTML;
+    return ingresoHTML;
 }
 
-function eliminarIngreso(id){
-    console.log("HOLA CARAMBOLA")
-}
+//function eliminarIngreso(id) {
+ //   console.log("ELIMINAR INGRESO")
+//}
 
 
-const cargarEgresos = () =>{
-    let egresosHTML=""; //declaración de la variable vacia
-    for(let egreso of egresos){
+const cargarEgresos = () => {
+    let egresosHTML = ""; //declaración de la variable vacia
+    for (let egreso of egresos) {
         egresosHTML = egresosHTML + crearEgresoHTML(egreso);
     }
 
-    let listaEgresos= document.getElementsByClassName("lista-egresos"); //encuentralo y traemelo aqui por que le quiero setear su contenido
+    let listaEgresos = document.getElementsByClassName("lista-egresos"); //encuentralo y traemelo aqui por que le quiero setear su contenido
     listaEgresos[0].innerHTML = egresosHTML;
 }
 
 
-const crearEgresoHTML = (egreso) =>{
-    let egresoHTML=`
+const crearEgresoHTML = (egreso) => {
+    let egresoHTML = `
     <div class="elemento limpiarEstilos">
 
     <div class="elemento_descripcion">${egreso.getDescripcion}</div>
@@ -182,7 +182,28 @@ const crearEgresoHTML = (egreso) =>{
     return egresoHTML;
 }
 
-function eliminarEgreso(id){
-    console.log("ELIMINAR EGRESO")
+
+const eliminarEgreso = (id) => {
+    const isId = (element) => element.getId === id;  // **********************
+    let indiceEliminar = egresos.findIndex(isId);
+    //return indiceEliminar;
+    egresos.splice(indiceEliminar,1);
+    cargarCabecero();
+    cargarEgresos();
 }
+
+const eliminarIngreso = (id) => {
+    const isId = (element) => element.getId === id;  // **********************
+    let indiceEliminar = ingresos.findIndex(isId);
+    //return indiceEliminar;
+    ingresos.splice(indiceEliminar,1);
+    cargarCabecero();
+    cargarIngresos();
+}
+
+
+
+
+
+
 
