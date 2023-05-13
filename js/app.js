@@ -145,7 +145,7 @@ const crearIngresoHTML = (ingreso) => {
 }
 
 //function eliminarIngreso(id) {
- //   console.log("ELIMINAR INGRESO")
+//   console.log("ELIMINAR INGRESO")
 //}
 
 
@@ -187,7 +187,7 @@ const eliminarEgreso = (id) => {
     const isId = (element) => element.getId === id;  // **********************
     let indiceEliminar = egresos.findIndex(isId);
     //return indiceEliminar;
-    egresos.splice(indiceEliminar,1);
+    egresos.splice(indiceEliminar, 1);
     cargarCabecero();
     cargarEgresos();
 }
@@ -196,12 +196,36 @@ const eliminarIngreso = (id) => {
     const isId = (element) => element.getId === id;  // **********************
     let indiceEliminar = ingresos.findIndex(isId);
     //return indiceEliminar;
-    ingresos.splice(indiceEliminar,1);
+    ingresos.splice(indiceEliminar, 1);
     cargarCabecero();
     cargarIngresos();
 }
 
 
+const agregarDato = () => {
+    let forma = document.getElementById("forma");
+    //console.log(forma);
+    let tipo = document.getElementById("tipo").value;
+    let descripcion = document.getElementById("descripcion").value;
+    let valor = parseInt(document.getElementById("valor").value);
+    if (valor != "" && descripcion != "" && valor >= 0) 
+    {
+        if (tipo == "ingreso") {
+            ingresos.push(new Ingreso(descripcion, valor));
+
+        } else {
+            egresos.push(new Egreso(descripcion, valor));
+
+        } 
+        cargarCabecero();
+        cargarEgresos();
+        cargarIngresos();
+    } else{
+        console.warn("Favor de ingresar un tipo de dato número positivo mayor a cero");
+    }
+
+
+}
 
 
 

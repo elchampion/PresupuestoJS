@@ -47,7 +47,7 @@
     </div>
 
 
-    <form id="forma">
+    <form id="forma" onsubmit="return false">
         <div class="agregar">
             <div class="agregar_contenedor">
 
@@ -56,8 +56,8 @@
                     <option value="egreso">-</option>
                 </select>
                 <input type="text" class="agregar_descripcion" id="descripcion" placeholder="Agregar Descripción">
-                <input type="text" class="agregar_valor" step="any">
-                <button class="agregar_btn"> <ion-icon name="checkmark-circle-outline"></ion-icon></button>
+                <input type="text" class="agregar_valor" step="any" placeholder="Agregar Valor" id="valor">
+                <button class="agregar_btn"> <ion-icon name="checkmark-circle-outline" onclick=agregarDato();></ion-icon></button>
             </div>
 
         </div>
